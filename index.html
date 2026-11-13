@@ -1,160 +1,347 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Jakanuza | African Cartoon Series</title>
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Loy Kay Arts — art, design, cartoons and storytelling by Lloyd Kampira.">
+<title>LOY KAY ARTS | Where Ideas Take Shape</title>
 
 <style>
-
+:root {
+    --ink: #111111;
+    --paper: #f5f4f0;
+    --white: #ffffff;
+    --muted: #686868;
+    --line: #202020;
+    --accent: #a8753e;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: white;
-    color: black;
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--paper);
+    background-image: radial-gradient(#d3d0ca 0.8px, transparent 0.8px);
+    background-size: 21px 21px;
 }
+a { color: inherit; }
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    padding: 16px 14px;
+    background: var(--ink);
+}
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+nav a:hover { color: #d8b58e; }
 
-header {
+.hero {
+    padding: 42px 20px 52px;
     text-align: center;
-    padding: 40px 20px;
-    border-bottom: 3px solid black;
+    background: #eeece7;
+    border-bottom: 4px solid var(--ink);
 }
-
-.logo {
-    width: 250px;
-    max-width: 80%;
+.main-logo {
+    display: block;
+    width: min(560px, 92%);
+    height: auto;
+    margin: 0 auto 24px;
+    border-radius: 12px;
 }
-
-h1 {
-    font-size: 45px;
-    margin: 15px 0;
+.hero-kicker {
+    margin: 0 0 12px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 700;
 }
-
-.tagline {
-    font-size: 22px;
+.hero h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(32px, 6vw, 58px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
-
-section {
-    padding: 40px 20px;
+.hero-copy {
+    max-width: 650px;
+    margin: 16px auto 0;
+    line-height: 1.7;
+    color: #444;
+}
+.african-rule {
+    width: 110px;
+    height: 9px;
+    margin: 24px auto 0;
+    background: repeating-linear-gradient(135deg, var(--ink) 0 3px, transparent 3px 7px);
+}
+section { padding: 66px 20px; scroll-margin-top: 72px; }
+.section-inner { width: min(1050px, 100%); margin: 0 auto; }
+.section-heading {
+    margin: 0 0 12px;
     text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(28px, 4vw, 40px);
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
-
-.box {
+.section-intro {
     max-width: 700px;
-    margin: 20px auto;
-    border: 2px solid black;
-    padding: 25px;
+    margin: 0 auto 32px;
+    text-align: center;
+    line-height: 1.75;
+    color: #444;
 }
-
-h2 {
-    font-size: 30px;
+.panel {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 34px;
+    background: rgba(255,255,255,.96);
+    border: 2px solid var(--line);
+    box-shadow: 6px 6px 0 var(--line);
+    line-height: 1.8;
 }
-
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+.work-card {
+    padding: 30px 26px;
+    background: var(--white);
+    border: 2px solid var(--line);
+    box-shadow: 5px 5px 0 var(--line);
+}
+.card-mark {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 18px;
+    border: 2px solid var(--ink);
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: bold;
+}
+.work-card h3 {
+    margin: 0 0 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.work-card p { min-height: 76px; line-height: 1.7; color: #444; }
 .button {
     display: inline-block;
-    padding: 12px 25px;
-    border: 2px solid black;
-    color: black;
+    padding: 12px 20px;
+    border: 2px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
     text-decoration: none;
-    margin-top: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
-
-footer {
-    background: black;
-    color: white;
+.button:hover { background: var(--ink); color: var(--white); }
+.project-section {
+    background: #e9e7e1;
+    border-top: 4px solid var(--ink);
+    border-bottom: 4px solid var(--ink);
+}
+.project-logo {
+    display: block;
+    width: min(470px, 92%);
+    height: auto;
+    margin: 0 auto 24px;
+    background: white;
+}
+.project-copy {
+    max-width: 700px;
+    margin: 0 auto 24px;
     text-align: center;
-    padding: 25px;
+    line-height: 1.8;
 }
+.story-note {
+    padding: 22px;
+    border: 1px dashed #555;
+    background: rgba(255,255,255,.65);
+    text-align: center;
+    line-height: 1.7;
+}
+.contact-panel { text-align: center; }
+footer {
+    padding: 35px 20px;
+    background: var(--ink);
+    color: var(--white);
+    text-align: center;
+    line-height: 1.8;
+}
+footer p { margin: 5px 0; }
+.small-credit { color: #c7c7c7; font-size: 13px; }
 
+@media (max-width: 650px) {
+    nav { gap: 12px 16px; }
+    nav a { font-size: 10px; }
+    section { padding: 48px 16px; }
+    .work-grid { grid-template-columns: 1fr; }
+    .panel { padding: 24px; }
+    .work-card p { min-height: 0; }
+}
 </style>
-
 </head>
 
 <body>
+<nav aria-label="Main navigation">
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#visual-arts">VISUAL ARTS</a>
+    <a href="#design">DESIGN</a>
+    <a href="#jakanuza">JAKANUZA</a>
+    <a href="#stories">SHORT STORIES</a>
+    <a href="#contact">CONTACT</a>
+</nav>
 
-
-<header>
-
-<img src="WhatsApp Image 2026-07-27 at 11.35.07 AM.jpeg" class="logo">
-
-<h1>JAKANUZA</h1>
-
-<p class="tagline">
-Original African Cartoon Series
-</p>
-
-<p>
-Laugh. Think. Connect.
-</p>
-
+<header class="hero" id="home">
+    <img class="main-logo" src="loy-kay-arts-logo.jpeg" alt="Loy Kay Arts — Where Ideas Take Shape">
+    <p class="hero-kicker">AN INDEPENDENT CREATIVE BRAND</p>
+    <h1>Where Ideas Take Shape</h1>
+    <p class="hero-copy">
+        A creative home for visual art, design, cartoons and storytelling.
+        Explore the work and ideas of Lloyd Kampira.
+    </p>
+    <div class="african-rule" aria-hidden="true"></div>
 </header>
 
-
-
-<section>
-
-<div class="box">
-
-<h2>Welcome to Jakanuza</h2>
-
-<p>
-Jakanuza is an original cartoon series created by Lloyd Kampira.
-Through humour, satire and storytelling, Jakanuza explores African culture,
-everyday life and the funny moments that connect people.
-</p>
-
-<a class="button" href="#">
-Read Comics
-</a>
-
-</div>
-
-
-
-<div class="box">
-
-<h2>Latest Comics</h2>
-
-<p>
-New Jakanuza episodes coming soon.
-</p>
-
-</div>
-
-
-
-<div class="box">
-
-<h2>Meet The Creator</h2>
-
-<p>
-<strong>Lloyd Kampira</strong><br>
-Artist | Cartoonist | Storyteller
-</p>
-
-<p>
-Creator of Jakanuza and founder of Loy Kay Arts.
-</p>
-
-</div>
-
-
+<section id="about">
+    <div class="section-inner">
+        <div class="panel">
+            <h2 class="section-heading">Welcome to Loy Kay Arts</h2>
+            <p>
+                Loy Kay Arts is the creative platform of Lloyd Kampira.
+                It brings together different forms of artistic expression —
+                from pencil drawings and graphic design to original cartoons,
+                short stories and other creative projects.
+            </p>
+            <p>
+                Each work begins with an idea. This is where those ideas
+                take shape and find their way into the world.
+            </p>
+        </div>
+    </div>
 </section>
 
+<section id="visual-arts">
+    <div class="section-inner">
+        <h2 class="section-heading">Explore the Creative Work</h2>
+        <p class="section-intro">
+            Different forms of creativity, brought together under one roof.
+            This portfolio will grow as new work is added.
+        </p>
 
+        <div class="work-grid">
+            <article class="work-card">
+                <div class="card-mark">✎</div>
+                <h3>Visual Arts</h3>
+                <p>Pencil portraits, drawings and traditional artwork created through observation, patience and imagination.</p>
+                <a class="button" href="#contact">ARTWORK PORTFOLIO</a>
+            </article>
+
+            <article class="work-card" id="design">
+                <div class="card-mark">G</div>
+                <h3>Graphic Design</h3>
+                <p>Posters, branding, visual communication and design concepts for different ideas and projects.</p>
+                <a class="button" href="#contact">DESIGN PORTFOLIO</a>
+            </article>
+
+            <article class="work-card">
+                <div class="card-mark">J</div>
+                <h3>Cartoons & Comics</h3>
+                <p>Original characters, illustrations, African humour and stories told through cartoons.</p>
+                <a class="button" href="#jakanuza">MEET JAKANUZA</a>
+            </article>
+
+            <article class="work-card" id="stories">
+                <div class="card-mark">“</div>
+                <h3>Short Stories</h3>
+                <p>Original fiction, reflections and imaginative storytelling. A space for words, characters and ideas.</p>
+                <a class="button" href="#story-shelf">EXPLORE STORIES</a>
+            </article>
+
+            <article class="work-card">
+                <div class="card-mark">✧</div>
+                <h3>Other Creative Projects</h3>
+                <p>Handmade creations, experiments and ideas that explore creativity beyond the page and canvas.</p>
+                <a class="button" href="#contact">DISCOVER MORE</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="project-section" id="jakanuza">
+    <div class="section-inner">
+        <img class="project-logo" src="jakanuza-logo.jpeg" alt="Jakanuza cartoon logo by Lloyd Kampira">
+        <div class="project-copy">
+            <h2 class="section-heading">A Loy Kay Arts Project</h2>
+            <p>
+                Jakanuza is an original African cartoon series created by
+                Lloyd Kampira. Through humour, satire and storytelling,
+                it explores African culture, everyday life and the funny
+                moments that connect people.
+            </p>
+            <p><strong>Laugh. Think. Connect.</strong></p>
+            <a class="button" href="comics/episode%201.html">READ EPISODE 1</a>
+        </div>
+    </div>
+</section>
+
+<section id="story-shelf">
+    <div class="section-inner">
+        <h2 class="section-heading">Short Stories</h2>
+        <p class="section-intro">
+            Stories made of imagination, observation and the little details
+            of everyday life.
+        </p>
+        <div class="story-note">
+            <strong>The story shelf is being prepared.</strong><br>
+            Original stories by Lloyd Kampira will appear here.
+            Come back as the collection grows.
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="section-inner">
+        <div class="panel contact-panel">
+            <h2 class="section-heading">The Creator</h2>
+            <h3>Lloyd Kampira</h3>
+            <p>Artist · Cartoonist · Designer · Storyteller</p>
+            <p>
+                Founder of Loy Kay Arts and creator of Jakanuza.
+                Thank you for visiting this creative space.
+            </p>
+            <h2 class="section-heading">Get in Touch</h2>
+            <p>
+                For artwork, design enquiries and creative collaborations,
+                please connect through Loy Kay Arts' social media pages.
+            </p>
+            <!-- Add confirmed social media and contact links here later. -->
+        </div>
+    </div>
+</section>
 
 <footer>
-
-<p>
-© 2026 Jakanuza
-</p>
-
-<p>
-Created by Lloyd Kampira
-</p>
-
+    <h2>LOY KAY ARTS</h2>
+    <p>Art · Design · Storytelling</p>
+    <p class="small-credit">Where Ideas Take Shape</p>
+    <p class="small-credit">© 2026 Loy Kay Arts · Created by Lloyd Kampira</p>
 </footer>
-
-
 </body>
 </html>
