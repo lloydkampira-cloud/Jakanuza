@@ -176,13 +176,43 @@ section { padding: 66px 20px; scroll-margin-top: 72px; }
     text-align: center;
     line-height: 1.7;
 }
-.contact-panel { text-align: center; }
-footer {
-    padding: 35px 20px;
+.contact-panel {
+    text-align: center;
+}
+
+.contact-details {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.contact-details p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+.contact-details a:not(.button) {
+    color: var(--accent);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-details a:not(.button):hover {
+    text-decoration: underline;
+}
+
+.contact-details .button {
+    margin-top: 15px;
     background: var(--ink);
     color: var(--white);
-    text-align: center;
-    line-height: 1.8;
+}
+
+.contact-details .button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
 }
 footer p { margin: 5px 0; }
 .small-credit { color: #c7c7c7; font-size: 13px; }
