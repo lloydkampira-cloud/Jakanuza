@@ -218,6 +218,56 @@ section {
     line-height: 1.7;
 }
 
+/* MEET THE CREATOR */
+
+.creator-section {
+    background: #eeece7;
+    border-top: 4px solid var(--ink);
+    border-bottom: 4px solid var(--ink);
+}
+
+.creator-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.4fr;
+    align-items: center;
+    gap: 42px;
+    max-width: 950px;
+    margin: 35px auto 0;
+}
+
+.creator-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 3px solid var(--ink);
+    box-shadow: 7px 7px 0 var(--ink);
+}
+
+.creator-text {
+    padding: 10px 0;
+    line-height: 1.85;
+}
+
+.creator-name {
+    margin: 0 0 5px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+}
+
+.creator-role {
+    margin: 0 0 22px;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.creator-text p {
+    margin: 0 0 16px;
+    color: #333;
+}
+
 /* CONTACT SECTION */
 
 .contact-panel {
@@ -299,6 +349,24 @@ footer p {
     .work-grid { grid-template-columns: 1fr; }
     .panel { padding: 24px; }
     .work-card p { min-height: 0; }
+
+    .creator-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        max-width: 430px;
+    }
+
+    .creator-photo {
+        max-width: 100%;
+    }
+
+    .creator-name {
+        text-align: center;
+    }
+
+    .creator-role {
+        text-align: center;
+    }
 }
 </style>
 </head>
@@ -312,6 +380,7 @@ footer p {
     <a href="#design">DESIGN</a>
     <a href="#jakanuza">JAKANUZA</a>
     <a href="#stories">SHORT STORIES</a>
+    <a href="#creator">CREATOR</a>
     <a href="#contact">CONTACT</a>
 </nav>
 
@@ -425,18 +494,75 @@ footer p {
     </div>
 </section>
 
+<!-- MEET THE CREATOR -->
+
+<section class="creator-section" id="creator">
+    <div class="section-inner">
+
+        <h2 class="section-heading">Meet the Creator</h2>
+        <p class="section-intro">
+            The person and the story behind Loy Kay Arts.
+        </p>
+
+        <div class="creator-layout">
+
+            <div>
+                <img
+                    class="creator-photo"
+                    src="lloyd-kampira.jpg"
+                    alt="Lloyd Kampira, founder of Loy Kay Arts">
+            </div>
+
+            <div class="creator-text">
+
+                <h3 class="creator-name">Lloyd Kampira</h3>
+                <p class="creator-role">Artist · Cartoonist · Designer · Storyteller</p>
+
+                <p>
+                    He is a Malawian artist whose creative journey began in
+                    childhood. Like many children, he started drawing
+                    alongside his peers, but his interest soon grew beyond
+                    that. During primary school, he would find himself
+                    drawing on the classroom blackboard for teachers
+                    during lessons.
+                </p>
+
+                <p>
+                    After school, the evenings were often filled with
+                    stories. He and other boys would gather to share jokes,
+                    movie stories and experiences from everyday life.
+                    Those simple moments of imagination and storytelling
+                    helped shape the artist he is today.
+                </p>
+
+                <p>
+                    Over the years, that childhood passion has grown into
+                    a desire to share his creativity with the world.
+                    Along the way, he has taken on voluntary creative
+                    projects for notable Malawian personalities, including
+                    Pemphero Wamwale Mphande and Francis Kalawe, and
+                    participated in the Football Association of Malawi's
+                    jersey design competition, among other opportunities.
+                </p>
+
+                <p>
+                    Through Loy Kay Arts, he now brings together visual
+                    art, graphic design, cartoons, short stories and more.
+                    The journey continues, with one simple purpose: to
+                    turn ideas and imagination into creative experiences
+                    that people can see, feel and connect with.
+                </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+
 <section id="contact">
     <div class="section-inner">
         <div class="panel contact-panel">
-
-            <h2 class="section-heading">The Creator</h2>
-            <h3>Lloyd Kampira</h3>
-            <p>Artist · Cartoonist · Designer · Storyteller</p>
-
-            <p>
-                Founder of Loy Kay Arts and creator of Jakanuza.
-                Thank you for visiting this creative space.
-            </p>
 
             <h2 class="section-heading">Get in Touch</h2>
 
