@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +16,10 @@
     --line: #202020;
     --accent: #a8753e;
 }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
 body {
     margin: 0;
     color: var(--ink);
@@ -25,7 +28,9 @@ body {
     background-image: radial-gradient(#d3d0ca 0.8px, transparent 0.8px);
     background-size: 21px 21px;
 }
+
 a { color: inherit; }
+
 nav {
     position: sticky;
     top: 0;
@@ -37,6 +42,7 @@ nav {
     padding: 16px 14px;
     background: var(--ink);
 }
+
 nav a {
     color: var(--white);
     text-decoration: none;
@@ -44,6 +50,7 @@ nav a {
     font-weight: 700;
     letter-spacing: 1.2px;
 }
+
 nav a:hover { color: #d8b58e; }
 
 .hero {
@@ -52,6 +59,7 @@ nav a:hover { color: #d8b58e; }
     background: #eeece7;
     border-bottom: 4px solid var(--ink);
 }
+
 .main-logo {
     display: block;
     width: min(560px, 92%);
@@ -59,12 +67,14 @@ nav a:hover { color: #d8b58e; }
     margin: 0 auto 24px;
     border-radius: 12px;
 }
+
 .hero-kicker {
     margin: 0 0 12px;
     font-size: 12px;
     letter-spacing: 4px;
     font-weight: 700;
 }
+
 .hero h1 {
     margin: 0;
     font-family: Georgia, "Times New Roman", serif;
@@ -72,20 +82,31 @@ nav a:hover { color: #d8b58e; }
     letter-spacing: 2px;
     text-transform: uppercase;
 }
+
 .hero-copy {
     max-width: 650px;
     margin: 16px auto 0;
     line-height: 1.7;
     color: #444;
 }
+
 .african-rule {
     width: 110px;
     height: 9px;
     margin: 24px auto 0;
     background: repeating-linear-gradient(135deg, var(--ink) 0 3px, transparent 3px 7px);
 }
-section { padding: 66px 20px; scroll-margin-top: 72px; }
-.section-inner { width: min(1050px, 100%); margin: 0 auto; }
+
+section {
+    padding: 66px 20px;
+    scroll-margin-top: 72px;
+}
+
+.section-inner {
+    width: min(1050px, 100%);
+    margin: 0 auto;
+}
+
 .section-heading {
     margin: 0 0 12px;
     text-align: center;
@@ -94,6 +115,7 @@ section { padding: 66px 20px; scroll-margin-top: 72px; }
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+
 .section-intro {
     max-width: 700px;
     margin: 0 auto 32px;
@@ -101,6 +123,7 @@ section { padding: 66px 20px; scroll-margin-top: 72px; }
     line-height: 1.75;
     color: #444;
 }
+
 .panel {
     max-width: 850px;
     margin: 0 auto;
@@ -110,17 +133,20 @@ section { padding: 66px 20px; scroll-margin-top: 72px; }
     box-shadow: 6px 6px 0 var(--line);
     line-height: 1.8;
 }
+
 .work-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
 }
+
 .work-card {
     padding: 30px 26px;
     background: var(--white);
     border: 2px solid var(--line);
     box-shadow: 5px 5px 0 var(--line);
 }
+
 .card-mark {
     display: grid;
     place-items: center;
@@ -132,13 +158,20 @@ section { padding: 66px 20px; scroll-margin-top: 72px; }
     font-size: 27px;
     font-weight: bold;
 }
+
 .work-card h3 {
     margin: 0 0 10px;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 24px;
     text-transform: uppercase;
 }
-.work-card p { min-height: 76px; line-height: 1.7; color: #444; }
+
+.work-card p {
+    min-height: 76px;
+    line-height: 1.7;
+    color: #444;
+}
+
 .button {
     display: inline-block;
     padding: 12px 20px;
@@ -150,12 +183,18 @@ section { padding: 66px 20px; scroll-margin-top: 72px; }
     font-weight: 700;
     letter-spacing: 1px;
 }
-.button:hover { background: var(--ink); color: var(--white); }
+
+.button:hover {
+    background: var(--ink);
+    color: var(--white);
+}
+
 .project-section {
     background: #e9e7e1;
     border-top: 4px solid var(--ink);
     border-bottom: 4px solid var(--ink);
 }
+
 .project-logo {
     display: block;
     width: min(470px, 92%);
@@ -163,12 +202,14 @@ section { padding: 66px 20px; scroll-margin-top: 72px; }
     margin: 0 auto 24px;
     background: white;
 }
+
 .project-copy {
     max-width: 700px;
     margin: 0 auto 24px;
     text-align: center;
     line-height: 1.8;
 }
+
 .story-note {
     padding: 22px;
     border: 1px dashed #555;
@@ -176,6 +217,9 @@ section { padding: 66px 20px; scroll-margin-top: 72px; }
     text-align: center;
     line-height: 1.7;
 }
+
+/* CONTACT SECTION */
+
 .contact-panel {
     text-align: center;
 }
@@ -214,9 +258,11 @@ section { padding: 66px 20px; scroll-margin-top: 72px; }
     border-color: var(--accent);
 }
 
+/* WHATSAPP BUTTON */
+
 .contact-details a.whatsapp-button {
     background: #25D366;
-    color: white;
+    color: #ffffff !important;
     border: 2px solid #25D366;
 }
 
@@ -224,16 +270,9 @@ section { padding: 66px 20px; scroll-margin-top: 72px; }
     background: #128C7E;
     border-color: #128C7E;
 }
-    background: #25D366;
-    color: #ffffff !important;
-    border: 1px solid #25D366;
-}
 
-.contact-details a.whatsapp-button:hover {
-    background: #128C7E;
-    border-color: #128C7E;
-}
-}
+/* FOOTER */
+
 footer {
     padding: 35px 20px;
     background: var(--ink);
@@ -241,7 +280,17 @@ footer {
     text-align: center;
     line-height: 1.8;
 }
-.small-credit { color: #c7c7c7; font-size: 13px; }
+
+footer p {
+    margin: 5px 0;
+}
+
+.small-credit {
+    color: #c7c7c7;
+    font-size: 13px;
+}
+
+/* MOBILE DISPLAY */
 
 @media (max-width: 650px) {
     nav { gap: 12px 16px; }
@@ -255,6 +304,7 @@ footer {
 </head>
 
 <body>
+
 <nav aria-label="Main navigation">
     <a href="#home">HOME</a>
     <a href="#about">ABOUT</a>
@@ -303,6 +353,7 @@ footer {
         </p>
 
         <div class="work-grid">
+
             <article class="work-card">
                 <div class="card-mark">✎</div>
                 <h3>Visual Arts</h3>
@@ -337,6 +388,7 @@ footer {
                 <p>Handmade creations, experiments and ideas that explore creativity beyond the page and canvas.</p>
                 <a class="button" href="#contact">DISCOVER MORE</a>
             </article>
+
         </div>
     </div>
 </section>
@@ -376,47 +428,63 @@ footer {
 <section id="contact">
     <div class="section-inner">
         <div class="panel contact-panel">
+
             <h2 class="section-heading">The Creator</h2>
             <h3>Lloyd Kampira</h3>
             <p>Artist · Cartoonist · Designer · Storyteller</p>
+
             <p>
                 Founder of Loy Kay Arts and creator of Jakanuza.
                 Thank you for visiting this creative space.
             </p>
+
             <h2 class="section-heading">Get in Touch</h2>
+
             <p>
                 For artwork, design enquiries and creative collaborations,
                 please connect through Loy Kay Arts' social media pages.
             </p>
-<div class="contact-details">
-    <p><strong>Email:</strong>
-        <a href="mailto:lloydkampira@gmail.com">lloydkampira@gmail.com</a>
-    </p>
 
-   <p>
-    <a class="button whatsapp-button"
-   href="https://wa.me/265885421121?text=Hello%20Loy%20Kay%20Arts%2C%20I%20would%20like%20to%20make%20an%20enquiry."
-   target="_blank">
-    CHAT WITH US ON WHATSAPP
-  </a>    
-</p>
+            <div class="contact-details">
 
-    <p><strong>Phone:</strong>
-        <a href="tel:+265993169473">+265 993 169 473</a>
-    </p>
+                <p>
+                    <strong>Email:</strong>
+                    <a href="mailto:lloydkampira@gmail.com">lloydkampira@gmail.com</a>
+                </p>
 
-    <p><strong>Facebook:</strong>
-        <a href="https://www.facebook.com/profile.php?id=61575496746908" target="_blank">Visit Loy Kay Arts on Facebook</a>
-    </p>
+                <p>
+                    <a class="button whatsapp-button"
+                       href="https://wa.me/265885421121?text=Hello%20Loy%20Kay%20Arts%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+                       target="_blank">
+                        CHAT WITH US ON WHATSAPP
+                    </a>
+                </p>
 
-    <p><strong>Location:</strong> Namcholi, Blantyre, Malawi</p>
+                <p>
+                    <strong>Phone:</strong>
+                    <a href="tel:+265993169473">+265 993 169 473</a>
+                </p>
 
-    <p>
-<a href="mailto:lloydkampira@gmail.com">lloydkampira@gmail.com</a>
-            SEND AN ENQUIRY
-        </a>
-    </p>
-</div>
+                <p>
+                    <strong>Facebook:</strong>
+                    <a href="https://www.facebook.com/profile.php?id=61575496746908" target="_blank">
+                        Visit Loy Kay Arts on Facebook
+                    </a>
+                </p>
+
+                <p>
+                    <strong>Location:</strong>
+                    Namcholi, Blantyre, Malawi
+                </p>
+
+                <p>
+                    <a class="button"
+                       href="mailto:lloydkampira@gmail.com?subject=LOY%20KAY%20ARTS%20Enquiry">
+                        SEND AN ENQUIRY
+                    </a>
+                </p>
+
+            </div>
         </div>
     </div>
 </section>
@@ -427,5 +495,6 @@ footer {
     <p class="small-credit">Where Ideas Take Shape</p>
     <p class="small-credit">© 2026 Loy Kay Arts · Created by Lloyd Kampira</p>
 </footer>
+
 </body>
 </html>
