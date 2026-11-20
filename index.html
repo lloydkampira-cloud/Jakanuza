@@ -218,6 +218,113 @@ section {
     line-height: 1.7;
 }
 
+/* VISUAL ARTS GALLERY */
+
+.art-gallery-section {
+    background: #f5f4f0;
+    border-top: 4px solid var(--ink);
+}
+
+.collection-heading {
+    margin: 48px 0 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.collection-intro {
+    max-width: 700px;
+    margin: 0 auto 28px;
+    text-align: center;
+    line-height: 1.7;
+    color: #444;
+}
+
+.art-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.art-card {
+    background: #ffffff;
+    border: 2px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+    overflow: hidden;
+}
+
+.art-image {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: contain;
+    background: #e9e7e1;
+    padding: 12px;
+}
+
+.art-info {
+    padding: 25px;
+}
+
+.art-info h3 {
+    margin: 0 0 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+}
+
+.art-year {
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.art-price {
+    font-weight: bold;
+    color: var(--accent);
+    margin: 14px 0;
+    font-size: 18px;
+}
+
+.art-description {
+    line-height: 1.8;
+    color: #444;
+}
+
+.art-details {
+    margin: 18px 0;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.art-enquiry {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 18px;
+    background: var(--ink);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.art-enquiry:hover {
+    background: var(--accent);
+}
+
+.commission-note {
+    margin-top: 55px;
+    padding: 30px;
+    background: #eeece7;
+    border: 2px dashed #777;
+    text-align: center;
+    line-height: 1.8;
+}
+
 /* MEET THE CREATOR */
 
 .creator-section {
@@ -350,6 +457,14 @@ footer p {
     .panel { padding: 24px; }
     .work-card p { min-height: 0; }
 
+    .art-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .art-image {
+        height: 350px;
+    }
+
     .creator-layout {
         grid-template-columns: 1fr;
         gap: 28px;
@@ -360,10 +475,7 @@ footer p {
         max-width: 100%;
     }
 
-    .creator-name {
-        text-align: center;
-    }
-
+    .creator-name,
     .creator-role {
         text-align: center;
     }
@@ -427,7 +539,7 @@ footer p {
                 <div class="card-mark">✎</div>
                 <h3>Visual Arts</h3>
                 <p>Pencil portraits, drawings and traditional artwork created through observation, patience and imagination.</p>
-                <a class="button" href="#contact">ARTWORK PORTFOLIO</a>
+                <a class="button" href="#available-art">VIEW ARTWORK</a>
             </article>
 
             <article class="work-card" id="design">
@@ -459,6 +571,155 @@ footer p {
             </article>
 
         </div>
+    </div>
+</section>
+
+<!-- AVAILABLE ARTWORK GALLERY -->
+
+<section class="art-gallery-section" id="available-art">
+    <div class="section-inner">
+
+        <h2 class="section-heading">Available Artwork</h2>
+        <p class="section-intro">
+            Original artworks by Loy Kay Arts. Each piece carries its own
+            story, inspiration and artistic expression.
+        </p>
+
+        <div class="art-gallery">
+
+            <!-- CHERRY TEMPTATION -->
+
+            <article class="art-card">
+                <img class="art-image"
+                     src="sale-1.jpeg"
+                     alt="Cherry Temptation by Loy Kay Arts">
+
+                <div class="art-info">
+                    <h3>Cherry Temptation</h3>
+                    <p class="art-year">2026 · LOY KAY ARTS</p>
+
+                    <p class="art-price">
+                        USD $500 <span style="font-size:13px;">(Negotiable)</span>
+                    </p>
+
+                    <p class="art-description">
+                        This artwork explores desire, choices and the things
+                        that catch our attention in life.
+                    </p>
+
+                    <p class="art-description">
+                        The black-and-white lady represents everyday life,
+                        while the bright red cherries symbolise dreams,
+                        opportunities and the things we want to reach for.
+                    </p>
+
+                    <p class="art-description">
+                        The water drops add a sense of freshness and life.
+                        The woman's gaze and hand capture a moment of
+                        curiosity and decision: seeing something attractive
+                        and deciding whether to pursue it.
+                    </p>
+
+                    <p class="art-description">
+                        This piece reminds us that life is full of
+                        opportunities, and every choice we make helps
+                        shape our journey.
+                    </p>
+
+                    <div class="art-details">
+                        <strong>Size:</strong> A3<br>
+                        <strong>Mediums:</strong> Charcoal pencil, graphite,
+                        colour pencils and compressed charcoal<br>
+                        <strong>Artist:</strong> Loy Kay Arts
+                    </div>
+
+                    <a class="art-enquiry"
+                       href="https://wa.me/265885421121?text=Hello%20Loy%20Kay%20Arts%2C%20I%20would%20like%20to%20enquire%20about%20Cherry%20Temptation."
+                       target="_blank" rel="noopener noreferrer">
+                        ENQUIRE ABOUT THIS ARTWORK
+                    </a>
+                </div>
+            </article>
+
+            <!-- SPIRIT OF THE WILD -->
+
+            <article class="art-card">
+                <img class="art-image"
+                     src="sale-2.jpeg"
+                     alt="Spirit of the Wild by Loy Kay Arts">
+
+                <div class="art-info">
+                    <h3>Spirit of the Wild</h3>
+                    <p class="art-year">2026 · LOY KAY ARTS</p>
+
+                    <p class="art-price">
+                        USD $1,000 <span style="font-size:13px;">(Negotiable)</span>
+                    </p>
+
+                    <p class="art-description">
+                        Spirit of the Wild draws inspiration from the
+                        commanding presence of the buffalo. Known for its
+                        powerful appearance and grounded nature, the buffalo
+                        represents strength, resilience and a quiet sense
+                        of authority.
+                    </p>
+
+                    <p class="art-description">
+                        In this artwork, the buffalo is presented entirely
+                        in black and white, allowing its highly detailed
+                        features, expression and natural character to take
+                        centre stage.
+                    </p>
+
+                    <p class="art-description">
+                        In contrast, the butterflies and flowers burst
+                        into colour, introducing beauty, freedom and the
+                        vibrancy of life.
+                    </p>
+
+                    <p class="art-description">
+                        The meeting of monochrome and colour creates a
+                        visual conversation between strength and gentleness,
+                        power and beauty, and the wild spirit of nature.
+                    </p>
+
+                    <p class="art-description">
+                        It is a reminder that true strength does not always
+                        need to be loud. Sometimes, it is found in quiet
+                        presence and the ability to coexist with the
+                        beauty around us.
+                    </p>
+
+                    <div class="art-details">
+                        <strong>Size:</strong> A2<br>
+                        <strong>Mediums:</strong> Charcoal, graphite,
+                        oil pastel and colour pencil<br>
+                        <strong>Artist:</strong> Loy Kay Arts
+                    </div>
+
+                    <a class="art-enquiry"
+                       href="https://wa.me/265885421121?text=Hello%20Loy%20Kay%20Arts%2C%20I%20would%20like%20to%20enquire%20about%20Spirit%20of%20the%20Wild."
+                       target="_blank" rel="noopener noreferrer">
+                        ENQUIRE ABOUT THIS ARTWORK
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="commission-note">
+            <h3 class="collection-heading" style="margin-top:0;">
+                Commissioned Artworks
+            </h3>
+            <p>
+                A collection of completed artworks created for clients
+                and special requests will be presented here.
+            </p>
+            <p>
+                <strong>Portfolio collection coming soon.</strong>
+            </p>
+        </div>
+
     </div>
 </section>
 
@@ -494,90 +755,6 @@ footer p {
     </div>
 </section>
 
-
-/* AVAILABLE ARTWORK GALLERY */
-
-.art-gallery-section {
-    background: #f5f4f0;
-}
-
-.art-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px;
-    margin-top: 38px;
-}
-
-.art-card {
-    background: #ffffff;
-    border: 2px solid var(--ink);
-    box-shadow: 6px 6px 0 var(--ink);
-    overflow: hidden;
-}
-
-.art-image {
-    display: block;
-    width: 100%;
-    height: 420px;
-    object-fit: contain;
-    background: #e9e7e1;
-    padding: 12px;
-}
-
-.art-info {
-    padding: 25px;
-}
-
-.art-info h3 {
-    margin: 0 0 8px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 25px;
-}
-
-.art-price {
-    font-weight: bold;
-    color: var(--accent);
-    margin: 12px 0;
-}
-
-.art-description {
-    line-height: 1.8;
-    color: #444;
-}
-
-.art-details {
-    margin: 18px 0;
-    padding-top: 15px;
-    border-top: 1px solid #ccc;
-    line-height: 1.9;
-    font-size: 14px;
-}
-
-.art-enquiry {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 12px 18px;
-    background: var(--ink);
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.art-enquiry:hover {
-    background: var(--accent);
-}
-
-@media (max-width: 650px) {
-    .art-gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .art-image {
-        height: 350px;
-    }
-
 <!-- MEET THE CREATOR -->
 
 <section class="creator-section" id="creator">
@@ -585,7 +762,7 @@ footer p {
 
         <h2 class="section-heading">Meet the Creator</h2>
         <p class="section-intro">
-       
+            The person and the story behind Loy Kay Arts.
         </p>
 
         <div class="creator-layout">
@@ -652,7 +829,7 @@ footer p {
 
             <p>
                 For artwork, design enquiries and creative collaborations,
-                please connect through...
+                please connect through Loy Kay Arts' social media pages.
             </p>
 
             <div class="contact-details">
@@ -665,7 +842,7 @@ footer p {
                 <p>
                     <a class="button whatsapp-button"
                        href="https://wa.me/265885421121?text=Hello%20Loy%20Kay%20Arts%2C%20I%20would%20like%20to%20make%20an%20enquiry."
-                       target="_blank">
+                       target="_blank" rel="noopener noreferrer">
                         CHAT WITH US ON WHATSAPP
                     </a>
                 </p>
@@ -677,7 +854,7 @@ footer p {
 
                 <p>
                     <strong>Facebook:</strong>
-                    <a href="https://www.facebook.com/profile.php?id=61575496746908" target="_blank">
+                    <a href="https://www.facebook.com/profile.php?id=61575496746908" target="_blank" rel="noopener noreferrer">
                         Visit Loy Kay Arts on Facebook
                     </a>
                 </p>
@@ -701,7 +878,7 @@ footer p {
 
 <footer>
     <h2>LOY KAY ARTS</h2>
-    
+    <p>Art · Design · Storytelling</p>
     <p class="small-credit">Where Ideas Take Shape</p>
     <p class="small-credit">© 2026 Loy Kay Arts · Created by Lloyd Kampira</p>
 </footer>
