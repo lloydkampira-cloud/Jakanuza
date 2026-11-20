@@ -4,73 +4,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Loy Kay Arts — art, design, cartoons and storytelling by Lloyd Kampira.">
+
+<meta name="description" content="Loy Kay Arts — visual art, graphic design, cartoons and storytelling by Lloyd Kampira, a Malawian creative artist.">
+<meta name="theme-color" content="#171714">
+
 <title>LOY KAY ARTS | Where Ideas Take Shape</title>
 
 <style>
 :root {
-    --ink: #111111;
-    --paper: #f5f4f0;
-    --white: #ffffff;
-    --muted: #686868;
-    --line: #202020;
-    --accent: #a8753e;
+    --ink: #171714;
+    --paper: #f6f3ed;
+    --cream: #ebe5d9;
+    --white: #fffefa;
+    --muted: #68645d;
+    --line: #d8d0c3;
+    --accent: #a45f3d;
+    --accent-dark: #78432e;
+    --green: #52664d;
+    --shadow: 0 12px 35px rgba(23,23,20,.08);
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
     color: var(--ink);
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--paper);
-    background-image: radial-gradient(#d3d0ca 0.8px, transparent 0.8px);
-    background-size: 21px 21px;
+    background-image:
+        radial-gradient(#d5cdbf 0.7px, transparent 0.7px);
+    background-size: 24px 24px;
+    line-height: 1.7;
 }
 
-a { color: inherit; }
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 5px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 10px;
+    z-index: 100;
+    padding: 12px 18px;
+    background: var(--white);
+    color: var(--ink);
+}
+
+.skip-link:focus {
+    left: 10px;
+}
+
+/* NAVIGATION */
 
 nav {
     position: sticky;
     top: 0;
-    z-index: 20;
+    z-index: 50;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 8px 24px;
-    padding: 16px 14px;
+    gap: 10px 25px;
+    padding: 17px 18px;
     background: var(--ink);
+    border-bottom: 3px solid var(--accent);
 }
 
 nav a {
     color: var(--white);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.3px;
+    transition: color .2s ease;
 }
 
-nav a:hover { color: #d8b58e; }
+nav a:hover {
+    color: #d8a17d;
+}
+
+/* HERO */
 
 .hero {
-    padding: 42px 20px 52px;
+    position: relative;
+    overflow: hidden;
+    padding: 58px 20px 65px;
     text-align: center;
-    background: #eeece7;
-    border-bottom: 4px solid var(--ink);
+    background: #eee9df;
+    border-bottom: 1px solid var(--line);
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border: 1px solid rgba(164,95,61,.28);
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+.hero::before {
+    top: -65px;
+    left: -40px;
+}
+
+.hero::after {
+    right: -40px;
+    bottom: -65px;
 }
 
 .main-logo {
     display: block;
-    width: min(560px, 92%);
+    width: min(540px, 92%);
     height: auto;
-    margin: 0 auto 24px;
-    border-radius: 12px;
+    margin: 0 auto 28px;
+    border-radius: 8px;
 }
 
 .hero-kicker {
     margin: 0 0 12px;
-    font-size: 12px;
+    color: var(--accent-dark);
+    font-size: 11px;
     letter-spacing: 4px;
     font-weight: 700;
 }
@@ -78,238 +150,294 @@ nav a:hover { color: #d8b58e; }
 .hero h1 {
     margin: 0;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(32px, 6vw, 58px);
-    letter-spacing: 2px;
+    font-size: clamp(34px, 6vw, 62px);
+    line-height: 1.15;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
 .hero-copy {
     max-width: 650px;
-    margin: 16px auto 0;
-    line-height: 1.7;
-    color: #444;
+    margin: 18px auto 0;
+    color: #514d46;
+    line-height: 1.9;
+    font-size: 16px;
 }
 
 .african-rule {
-    width: 110px;
-    height: 9px;
-    margin: 24px auto 0;
-    background: repeating-linear-gradient(135deg, var(--ink) 0 3px, transparent 3px 7px);
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 27px auto 0;
 }
 
+.african-rule span {
+    display: block;
+    width: 25px;
+    height: 6px;
+    background: var(--accent);
+}
+
+.african-rule span:nth-child(2) {
+    background: var(--ink);
+}
+
+.african-rule span:nth-child(3) {
+    background: var(--green);
+}
+
+/* GENERAL SECTIONS */
+
 section {
-    padding: 66px 20px;
-    scroll-margin-top: 72px;
+    padding: 78px 20px;
+    scroll-margin-top: 85px;
 }
 
 .section-inner {
-    width: min(1050px, 100%);
+    width: min(1080px, 100%);
     margin: 0 auto;
 }
 
 .section-heading {
-    margin: 0 0 12px;
+    margin: 0 0 14px;
     text-align: center;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(28px, 4vw, 40px);
-    letter-spacing: 1px;
+    font-size: clamp(29px, 4vw, 42px);
+    line-height: 1.2;
+    letter-spacing: .5px;
     text-transform: uppercase;
 }
 
 .section-intro {
     max-width: 700px;
-    margin: 0 auto 32px;
+    margin: 0 auto 38px;
     text-align: center;
-    line-height: 1.75;
-    color: #444;
+    line-height: 1.85;
+    color: var(--muted);
 }
 
-.panel {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 34px;
-    background: rgba(255,255,255,.96);
-    border: 2px solid var(--line);
-    box-shadow: 6px 6px 0 var(--line);
-    line-height: 1.8;
+.section-accent {
+    width: 48px;
+    height: 3px;
+    margin: 18px auto 25px;
+    background: var(--accent);
 }
+
+/* ABOUT */
+
+.panel {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 42px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--accent);
+    box-shadow: var(--shadow);
+    line-height: 1.9;
+}
+
+.panel .section-heading {
+    margin-bottom: 25px;
+}
+
+.panel p {
+    color: #48453f;
+}
+
+/* CREATIVE WORK CARDS */
 
 .work-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+    gap: 24px;
 }
 
 .work-card {
-    padding: 30px 26px;
+    position: relative;
+    padding: 32px;
     background: var(--white);
-    border: 2px solid var(--line);
-    box-shadow: 5px 5px 0 var(--line);
+    border: 1px solid var(--line);
+    border-bottom: 4px solid var(--accent);
+    box-shadow: 0 7px 22px rgba(23,23,20,.05);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
 }
 
 .card-mark {
     display: grid;
     place-items: center;
-    width: 58px;
-    height: 58px;
-    margin-bottom: 18px;
-    border: 2px solid var(--ink);
+    width: 55px;
+    height: 55px;
+    margin-bottom: 21px;
+    border: 1px solid var(--accent);
+    color: var(--accent-dark);
     font-family: Georgia, serif;
     font-size: 27px;
     font-weight: bold;
 }
 
 .work-card h3 {
-    margin: 0 0 10px;
+    margin: 0 0 12px;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 24px;
     text-transform: uppercase;
 }
 
 .work-card p {
-    min-height: 76px;
-    line-height: 1.7;
-    color: #444;
+    min-height: 78px;
+    margin-bottom: 22px;
+    line-height: 1.8;
+    color: var(--muted);
 }
+
+/* BUTTONS */
 
 .button {
     display: inline-block;
     padding: 12px 20px;
-    border: 2px solid var(--ink);
-    background: transparent;
-    color: var(--ink);
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--white);
     text-decoration: none;
-    font-size: 12px;
+    text-align: center;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
+    transition: background .2s ease, border-color .2s ease;
 }
 
 .button:hover {
-    background: var(--ink);
+    background: var(--accent);
+    border-color: var(--accent);
     color: var(--white);
 }
 
+/* JAKANUZA */
+
 .project-section {
-    background: #e9e7e1;
-    border-top: 4px solid var(--ink);
-    border-bottom: 4px solid var(--ink);
+    position: relative;
+    background: #eae4d8;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
 }
 
 .project-logo {
     display: block;
-    width: min(470px, 92%);
+    width: min(460px, 92%);
     height: auto;
-    margin: 0 auto 24px;
-    background: white;
+    margin: 0 auto 30px;
+    background: var(--white);
 }
 
 .project-copy {
-    max-width: 700px;
-    margin: 0 auto 24px;
+    max-width: 730px;
+    margin: 0 auto;
     text-align: center;
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
-.story-note {
-    padding: 22px;
-    border: 1px dashed #555;
-    background: rgba(255,255,255,.65);
-    text-align: center;
-    line-height: 1.7;
+.project-copy p {
+    color: #4e4a43;
 }
 
-/* VISUAL ARTS GALLERY */
+/* VISUAL ARTS */
 
 .art-gallery-section {
-    background: #f5f4f0;
-    border-top: 4px solid var(--ink);
+    background: var(--paper);
+    border-top: 1px solid var(--line);
 }
 
 .collection-heading {
-    margin: 48px 0 10px;
+    margin: 0 0 12px;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 27px;
+    font-size: 28px;
     text-align: center;
     text-transform: uppercase;
 }
 
 .collection-intro {
     max-width: 700px;
-    margin: 0 auto 28px;
+    margin: 0 auto 30px;
     text-align: center;
-    line-height: 1.7;
-    color: #444;
+    line-height: 1.8;
+    color: var(--muted);
 }
 
 .art-gallery {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
-    margin-top: 30px;
+    margin-top: 32px;
 }
 
 .art-card {
-    background: #ffffff;
-    border: 2px solid var(--ink);
-    box-shadow: 6px 6px 0 var(--ink);
     overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
 }
 
 .art-image {
     display: block;
     width: 100%;
-    height: 420px;
+    height: 430px;
     object-fit: contain;
-    background: #e9e7e1;
-    padding: 12px;
+    background: #eae6de;
+    padding: 15px;
 }
 
 .art-info {
-    padding: 25px;
+    padding: 27px;
 }
 
 .art-info h3 {
     margin: 0 0 8px;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 25px;
+    font-size: 27px;
 }
 
 .art-year {
     color: var(--muted);
-    font-size: 12px;
-    letter-spacing: 1px;
+    font-size: 11px;
+    letter-spacing: 1.4px;
 }
 
 .art-price {
+    margin: 16px 0;
+    color: var(--accent-dark);
+    font-size: 20px;
     font-weight: bold;
-    color: var(--accent);
-    margin: 14px 0;
-    font-size: 18px;
 }
 
 .art-description {
-    line-height: 1.8;
-    color: #444;
+    color: #514d46;
+    line-height: 1.85;
 }
 
 .art-details {
-    margin: 18px 0;
-    padding-top: 15px;
-    border-top: 1px solid #ccc;
-    line-height: 1.9;
+    margin: 20px 0 10px;
+    padding-top: 17px;
+    border-top: 1px solid var(--line);
+    color: #48453f;
+    line-height: 2;
     font-size: 14px;
 }
 
 .art-enquiry {
     display: inline-block;
-    margin-top: 12px;
-    padding: 12px 18px;
+    margin-top: 13px;
+    padding: 13px 19px;
     background: var(--ink);
-    color: #ffffff;
+    color: var(--white);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     letter-spacing: 1px;
+    transition: background .2s ease;
 }
 
 .art-enquiry:hover {
@@ -319,49 +447,45 @@ section {
 /* COMMISSIONED ARTWORKS */
 
 .commission-note {
-    margin-top: 55px;
-    padding: 30px;
-    background: #eeece7;
-    border: 2px dashed #777;
+    margin-top: 65px;
+    padding: 35px 25px;
+    background: #eee8dc;
+    border: 1px solid var(--line);
     text-align: center;
     line-height: 1.8;
 }
 
-.commission-note .collection-heading {
-    margin: 0 0 12px;
-}
-
 .commission-note p {
-    margin: 0 auto 12px;
-    color: #444;
+    max-width: 650px;
+    margin: 0 auto 14px;
+    color: #514d46;
 }
 
 .commission-gallery {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-    text-align: left;
+    gap: 26px;
+    margin-top: 32px;
 }
 
 .commission-card {
-    background: #ffffff;
-    border: 2px solid var(--ink);
-    box-shadow: 5px 5px 0 var(--ink);
     overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--line);
+    box-shadow: 0 7px 22px rgba(23,23,20,.06);
 }
 
 .commission-image-wrap {
     position: relative;
-    background: #e9e7e1;
+    background: #eae6de;
 }
 
 .commission-image {
     display: block;
     width: 100%;
-    height: 380px;
+    height: 390px;
     object-fit: contain;
-    padding: 10px;
+    padding: 12px;
 }
 
 .commission-image-wrap::after {
@@ -370,16 +494,16 @@ section {
     right: 18px;
     bottom: 18px;
     padding: 6px 9px;
-    background: rgba(255,255,255,0.55);
-    color: rgba(0,0,0,0.55);
-    font-size: 11px;
+    background: rgba(255,255,255,.65);
+    color: rgba(0,0,0,.58);
+    font-size: 10px;
     font-weight: bold;
     letter-spacing: 2px;
     pointer-events: none;
 }
 
 .commission-info {
-    padding: 16px 20px;
+    padding: 17px 20px;
     text-align: center;
 }
 
@@ -389,68 +513,94 @@ section {
     font-size: 19px;
 }
 
+/* SHORT STORIES */
+
+.story-section {
+    background: var(--white);
+    border-top: 1px solid var(--line);
+}
+
+.story-note {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #f1ece2;
+    border-left: 4px solid var(--accent);
+    text-align: center;
+    line-height: 1.9;
+}
+
 /* MEET THE CREATOR */
 
 .creator-section {
-    background: #eeece7;
-    border-top: 4px solid var(--ink);
-    border-bottom: 4px solid var(--ink);
+    background: #eae4d8;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
 }
 
 .creator-layout {
     display: grid;
-    grid-template-columns: 0.85fr 1.4fr;
+    grid-template-columns: .85fr 1.4fr;
     align-items: center;
-    gap: 42px;
-    max-width: 950px;
-    margin: 35px auto 0;
+    gap: 48px;
+    max-width: 960px;
+    margin: 42px auto 0;
 }
 
 .creator-photo {
     display: block;
     width: 100%;
     height: auto;
-    border: 3px solid var(--ink);
-    box-shadow: 7px 7px 0 var(--ink);
+    border: 7px solid var(--white);
+    box-shadow: 0 10px 30px rgba(23,23,20,.15);
 }
 
 .creator-text {
     padding: 10px 0;
-    line-height: 1.85;
+    line-height: 1.9;
 }
 
 .creator-name {
     margin: 0 0 5px;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 30px;
+    font-size: 32px;
 }
 
 .creator-role {
     margin: 0 0 22px;
-    color: var(--accent);
-    font-size: 12px;
+    color: var(--accent-dark);
+    font-size: 11px;
     font-weight: bold;
     letter-spacing: 1.5px;
     text-transform: uppercase;
 }
 
 .creator-text p {
-    margin: 0 0 16px;
-    color: #333;
+    margin: 0 0 17px;
+    color: #444039;
 }
 
-/* CONTACT SECTION */
+/* CONTACT */
+
+.contact-section {
+    background: var(--paper);
+}
 
 .contact-panel {
     text-align: center;
 }
 
+.contact-panel > p {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
 .contact-details {
-    margin-top: 28px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 17px;
+    margin-top: 30px;
 }
 
 .contact-details p {
@@ -459,7 +609,7 @@ section {
 }
 
 .contact-details a:not(.button) {
-    color: var(--accent);
+    color: var(--accent-dark);
     font-weight: bold;
     text-decoration: none;
 }
@@ -469,17 +619,10 @@ section {
 }
 
 .contact-details .button {
-    margin-top: 15px;
-    background: var(--ink);
-    color: var(--white);
+    margin-top: 8px;
 }
 
-.contact-details .button:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-}
-
-/* WHATSAPP BUTTON */
+/* WHATSAPP */
 
 .contact-details a.whatsapp-button {
     background: #25D366;
@@ -495,11 +638,19 @@ section {
 /* FOOTER */
 
 footer {
-    padding: 35px 20px;
+    padding: 42px 20px;
     background: var(--ink);
     color: var(--white);
     text-align: center;
-    line-height: 1.8;
+    line-height: 1.9;
+    border-top: 4px solid var(--accent);
+}
+
+footer h2 {
+    margin: 0 0 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    letter-spacing: 2px;
 }
 
 footer p {
@@ -507,48 +658,35 @@ footer p {
 }
 
 .small-credit {
-    color: #c7c7c7;
-    font-size: 13px;
+    color: #c7c2b9;
+    font-size: 12px;
 }
 
-/* MOBILE DISPLAY */
+/* RESPONSIVE DISPLAY */
 
-@media (max-width: 650px) {
-    nav { gap: 12px 16px; }
-    nav a { font-size: 10px; }
-    section { padding: 48px 16px; }
-    .work-grid { grid-template-columns: 1fr; }
-    .panel { padding: 24px; }
-    .work-card p { min-height: 0; }
-
-    .art-gallery {
-        grid-template-columns: 1fr;
+@media (max-width: 760px) {
+    nav {
+        gap: 12px 17px;
+        padding: 15px 12px;
     }
 
-    .art-image {
-        height: 350px;
+    nav a {
+        font-size: 10px;
     }
 
-    .commission-gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .commission-image {
-        height: 350px;
-    }
-
-    .commission-note {
-        padding: 24px 18px;
+    section {
+        padding: 58px 17px;
     }
 
     .creator-layout {
         grid-template-columns: 1fr;
-        gap: 28px;
-        max-width: 430px;
+        gap: 30px;
+        max-width: 520px;
     }
 
     .creator-photo {
-        max-width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
     }
 
     .creator-name,
@@ -556,54 +694,144 @@ footer p {
         text-align: center;
     }
 }
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 42px 17px 48px;
+    }
+
+    .hero-copy {
+        font-size: 14px;
+    }
+
+    .work-grid,
+    .art-gallery,
+    .commission-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .work-card {
+        padding: 27px 23px;
+    }
+
+    .work-card p {
+        min-height: 0;
+    }
+
+    .panel {
+        padding: 26px 22px;
+    }
+
+    .art-image {
+        height: 360px;
+    }
+
+    .commission-image {
+        height: 350px;
+    }
+
+    .commission-note {
+        padding: 28px 18px;
+    }
+
+    .art-info {
+        padding: 22px;
+    }
+
+    .creator-name {
+        font-size: 29px;
+    }
+
+    .contact-details .button {
+        max-width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+    }
+}
 </style>
 </head>
 
 <body>
 
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 <nav aria-label="Main navigation">
     <a href="#home">HOME</a>
     <a href="#about">ABOUT</a>
-    <a href="#visual-arts">VISUAL ARTS</a>
+    <a href="#available-art">VISUAL ARTS</a>
     <a href="#design">DESIGN</a>
     <a href="#jakanuza">JAKANUZA</a>
-    <a href="#stories">SHORT STORIES</a>
+    <a href="#story-shelf">SHORT STORIES</a>
     <a href="#creator">CREATOR</a>
     <a href="#contact">CONTACT</a>
 </nav>
 
 <header class="hero" id="home">
-    <img class="main-logo" src="loy-kay-arts-logo.jpeg" alt="Loy Kay Arts — Where Ideas Take Shape">
+    <img
+        class="main-logo"
+        src="loy-kay-arts-logo.jpeg"
+        alt="Loy Kay Arts logo">
+
     <p class="hero-kicker">AN INDEPENDENT CREATIVE BRAND</p>
+
     <h1>Where Ideas Take Shape</h1>
+
     <p class="hero-copy">
         A creative home for visual art, design, cartoons and storytelling.
         Explore the work and ideas of Lloyd Kampira.
     </p>
-    <div class="african-rule" aria-hidden="true"></div>
+
+    <div class="african-rule" aria-hidden="true">
+        <span></span><span></span><span></span>
+    </div>
 </header>
+
+<main id="main-content">
+
+<!-- ABOUT -->
 
 <section id="about">
     <div class="section-inner">
         <div class="panel">
+
             <h2 class="section-heading">Welcome to Loy Kay Arts</h2>
+            <div class="section-accent"></div>
+
             <p>
                 Loy Kay Arts is the creative platform of Lloyd Kampira.
                 It brings together different forms of artistic expression —
                 from pencil drawings and graphic design to original cartoons,
                 short stories and other creative projects.
             </p>
+
             <p>
                 Each work begins with an idea. This is where those ideas
                 take shape and find their way into the world.
             </p>
+
         </div>
     </div>
 </section>
 
-<section id="visual-arts">
+<!-- CREATIVE WORK -->
+
+<section id="creative-work">
     <div class="section-inner">
+
         <h2 class="section-heading">Explore the Creative Work</h2>
+
+        <div class="section-accent"></div>
+
         <p class="section-intro">
             Different forms of creativity, brought together under one roof.
             This portfolio will grow as new work is added.
@@ -614,35 +842,50 @@ footer p {
             <article class="work-card">
                 <div class="card-mark">✎</div>
                 <h3>Visual Arts</h3>
-                <p>Pencil portraits, drawings and traditional artwork created through observation, patience and imagination.</p>
+                <p>
+                    Pencil portraits, drawings and traditional artwork
+                    created through observation, patience and imagination.
+                </p>
                 <a class="button" href="#available-art">VIEW ARTWORK</a>
             </article>
 
             <article class="work-card" id="design">
                 <div class="card-mark">G</div>
                 <h3>Graphic Design</h3>
-                <p>Posters, branding, visual communication and design concepts for different ideas and projects.</p>
-                <a class="button" href="#contact">DESIGN PORTFOLIO</a>
+                <p>
+                    Posters, branding, visual communication and design
+                    concepts for different ideas and projects.
+                </p>
+                <a class="button" href="#contact">DESIGN ENQUIRIES</a>
             </article>
 
             <article class="work-card">
                 <div class="card-mark">J</div>
                 <h3>Cartoons & Comics</h3>
-                <p>Original characters, illustrations, African humour and stories told through cartoons.</p>
+                <p>
+                    Original characters, illustrations, African humour
+                    and stories told through cartoons.
+                </p>
                 <a class="button" href="#jakanuza">MEET JAKANUZA</a>
             </article>
 
-            <article class="work-card" id="stories">
+            <article class="work-card">
                 <div class="card-mark">“</div>
                 <h3>Short Stories</h3>
-                <p>Original fiction, reflections and imaginative storytelling. A space for words, characters and ideas.</p>
+                <p>
+                    Original fiction, reflections and imaginative
+                    storytelling. A space for words, characters and ideas.
+                </p>
                 <a class="button" href="#story-shelf">EXPLORE STORIES</a>
             </article>
 
             <article class="work-card">
                 <div class="card-mark">✧</div>
                 <h3>Other Creative Projects</h3>
-                <p>Handmade creations, experiments and ideas that explore creativity beyond the page and canvas.</p>
+                <p>
+                    Handmade creations, experiments and ideas that
+                    explore creativity beyond the page and canvas.
+                </p>
                 <a class="button" href="#contact">DISCOVER MORE</a>
             </article>
 
@@ -650,13 +893,22 @@ footer p {
     </div>
 </section>
 
-<!-- AVAILABLE ARTWORK GALLERY -->
+<!-- AVAILABLE ARTWORK -->
 
 <section class="art-gallery-section" id="available-art">
     <div class="section-inner">
 
-        <h2 class="section-heading">Available Artwork</h2>
+        <h2 class="section-heading">Visual Arts</h2>
+        <div class="section-accent"></div>
+
         <p class="section-intro">
+            Explore original artwork by Loy Kay Arts, including available
+            pieces and selected commissioned works.
+        </p>
+
+        <h3 class="collection-heading">Available Artwork</h3>
+
+        <p class="collection-intro">
             Original artworks by Loy Kay Arts. Each piece carries its own
             story, inspiration and artistic expression.
         </p>
@@ -666,16 +918,22 @@ footer p {
             <!-- CHERRY TEMPTATION -->
 
             <article class="art-card">
-                <img class="art-image"
-                     src="sale-1.jpeg"
-                     alt="Cherry Temptation by Loy Kay Arts">
+
+                <img
+                    class="art-image"
+                    src="sale-1.jpeg"
+                    alt="Cherry Temptation by Loy Kay Arts"
+                    loading="lazy">
 
                 <div class="art-info">
+
                     <h3>Cherry Temptation</h3>
+
                     <p class="art-year">2026 · LOY KAY ARTS</p>
 
                     <p class="art-price">
-                        USD $500 <span style="font-size:13px;">(Negotiable)</span>
+                        USD $500
+                        <span style="font-size:13px;">(Negotiable)</span>
                     </p>
 
                     <p class="art-description">
@@ -705,45 +963,53 @@ footer p {
                     <div class="art-details">
                         <strong>Size:</strong> A3<br>
                         <strong>Mediums:</strong> Charcoal pencils, graphite,
-                        colour pencils and compressed charcoal<br>
+                        colour pencils and compressed charcoal
                     </div>
 
-                    <a class="art-enquiry"
-                       href="https://wa.me/265885421121?text=Hello%20Loy%20Kay%20Arts%2C%20I%20would%20like%20to%20enquire%20about%20Cherry%20Temptation."
-                       target="_blank" rel="noopener noreferrer">
+                    <a
+                        class="art-enquiry"
+                        href="https://wa.me/265885421121?text=Hello%20Loy%20Kay%20Arts%2C%20I%20would%20like%20to%20enquire%20about%20Cherry%20Temptation."
+                        target="_blank"
+                        rel="noopener noreferrer">
                         ENQUIRE ABOUT THIS ARTWORK
                     </a>
+
                 </div>
             </article>
 
             <!-- SPIRIT OF THE WILD -->
 
             <article class="art-card">
-                <img class="art-image"
-                     src="sale-2.jpeg"
-                     alt="Spirit of the Wild by Loy Kay Arts">
+
+                <img
+                    class="art-image"
+                    src="sale-2.jpeg"
+                    alt="Spirit of the Wild by Loy Kay Arts"
+                    loading="lazy">
 
                 <div class="art-info">
+
                     <h3>Spirit of the Wild</h3>
+
                     <p class="art-year">2026 · LOY KAY ARTS</p>
 
                     <p class="art-price">
-                        USD $1,000 <span style="font-size:13px;">(Negotiable)</span>
+                        USD $1,000
+                        <span style="font-size:13px;">(Negotiable)</span>
                     </p>
 
                     <p class="art-description">
-                        This art draws inspiration from the
-                        commanding presence of the buffalo (Njati in Malawi). Known for its
-                        powerful appearance and grounded nature, it
-                        represents strength, resilience and a quiet sense
-                        of authority.
+                        This art draws inspiration from the commanding
+                        presence of the buffalo (Njati in Malawi). Known
+                        for its powerful appearance and grounded nature,
+                        it represents strength, resilience and a quiet
+                        sense of authority.
                     </p>
 
                     <p class="art-description">
-                        It is presented
-                        in black and white, allowing its highly detailed
-                        features, expression and natural character to take
-                        centre stage.
+                        It is presented in black and white, allowing its
+                        highly detailed features, expression and natural
+                        character to take centre stage.
                     </p>
 
                     <p class="art-description">
@@ -767,20 +1033,23 @@ footer p {
                     <div class="art-details">
                         <strong>Size:</strong> A2<br>
                         <strong>Mediums:</strong> Charcoal, graphite,
-                        oil pastel and colour pencil<br>
+                        oil pastel and colour pencil
                     </div>
 
-                    <a class="art-enquiry"
-                       href="https://wa.me/265885421121?text=Hello%20Loy%20Kay%20Arts%2C%20I%20would%20like%20to%20enquire%20about%20Spirit%20of%20the%20Wild."
-                       target="_blank" rel="noopener noreferrer">
+                    <a
+                        class="art-enquiry"
+                        href="https://wa.me/265885421121?text=Hello%20Loy%20Kay%20Arts%2C%20I%20would%20like%20to%20enquire%20about%20Spirit%20of%20the%20Wild."
+                        target="_blank"
+                        rel="noopener noreferrer">
                         ENQUIRE ABOUT THIS ARTWORK
                     </a>
+
                 </div>
             </article>
 
         </div>
 
-        <!-- COMMISSIONED ARTWORKS INTRODUCTION AND ENQUIRY -->
+        <!-- COMMISSIONED ARTWORKS -->
 
         <div class="commission-note">
 
@@ -793,84 +1062,84 @@ footer p {
                 and special requests.
             </p>
 
-            <a class="art-enquiry"
-               href="https://wa.me/265885421121?text=Hello%20Loy%20Kay%20Arts%2C%20I%20would%20like%20to%20enquire%20about%20your%20commissioned%20artworks."
-               target="_blank" rel="noopener noreferrer">
+            <a
+                class="art-enquiry"
+                href="https://wa.me/265885421121?text=Hello%20Loy%20Kay%20Arts%2C%20I%20would%20like%20to%20enquire%20about%20your%20commissioned%20artworks."
+                target="_blank"
+                rel="noopener noreferrer">
                 ENQUIRE ABOUT COMMISSIONED ARTWORKS
             </a>
 
         </div>
 
-        <!-- COMMISSIONED ARTWORKS GALLERY -->
-
         <div class="commission-gallery">
 
             <article class="commission-card">
                 <div class="commission-image-wrap">
-                    <img class="commission-image" src="artwork-1.jpeg.jpeg" alt="Commissioned artwork 1">
+                    <img class="commission-image" src="artwork-1.jpeg.jpeg" alt="Commissioned artwork 1" loading="lazy">
                 </div>
                 <div class="commission-info"><h4>Commissioned Artwork 01</h4></div>
             </article>
 
             <article class="commission-card">
                 <div class="commission-image-wrap">
-                    <img class="commission-image" src="artwork-2.jpeg.jpeg" alt="Commissioned artwork 2">
+                    <img class="commission-image" src="artwork-2.jpeg.jpeg" alt="Commissioned artwork 2" loading="lazy">
                 </div>
                 <div class="commission-info"><h4>Commissioned Artwork 02</h4></div>
             </article>
 
             <article class="commission-card">
                 <div class="commission-image-wrap">
-                    <img class="commission-image" src="artwork-3.jpeg.jpeg" alt="Commissioned artwork 3">
+                    <img class="commission-image" src="artwork-3.jpeg.jpeg" alt="Commissioned artwork 3" loading="lazy">
                 </div>
                 <div class="commission-info"><h4>Commissioned Artwork 03</h4></div>
             </article>
 
             <article class="commission-card">
                 <div class="commission-image-wrap">
-                    <img class="commission-image" src="artwork-4.jpeg.jpeg" alt="Commissioned artwork 4">
+                    <img class="commission-image" src="artwork-4.jpeg.jpeg" alt="Commissioned artwork 4" loading="lazy">
                 </div>
                 <div class="commission-info"><h4>Commissioned Artwork 04</h4></div>
             </article>
 
             <article class="commission-card">
                 <div class="commission-image-wrap">
-                    <img class="commission-image" src="artwork-5.jpeg.jpeg" alt="Commissioned artwork 5">
+                    <img class="commission-image" src="artwork-5.jpeg.jpeg" alt="Commissioned artwork 5" loading="lazy">
                 </div>
                 <div class="commission-info"><h4>Commissioned Artwork 05</h4></div>
             </article>
 
             <article class="commission-card">
                 <div class="commission-image-wrap">
-                    <img class="commission-image" src="artwork-6.jpeg.jpeg" alt="Commissioned artwork 6">
+                    <img class="commission-image" src="artwork-6.jpeg.jpeg" alt="Commissioned artwork 6" loading="lazy">
                 </div>
                 <div class="commission-info"><h4>Commissioned Artwork 06</h4></div>
             </article>
 
             <article class="commission-card">
                 <div class="commission-image-wrap">
-                    <img class="commission-image" src="artwork-7.jpeg.jpeg" alt="Commissioned artwork 7">
+                    <img class="commission-image" src="artwork-7.jpeg.jpeg" alt="Commissioned artwork 7" loading="lazy">
                 </div>
                 <div class="commission-info"><h4>Commissioned Artwork 07</h4></div>
             </article>
 
             <article class="commission-card">
                 <div class="commission-image-wrap">
-                    <img class="commission-image" src="artwork-8.jpeg.jpeg" alt="Commissioned artwork 8">
+                    <img class="commission-image" src="artwork-8.jpeg.jpeg" alt="Commissioned artwork 8" loading="lazy">
                 </div>
                 <div class="commission-info"><h4>Commissioned Artwork 08</h4></div>
             </article>
 
             <article class="commission-card">
                 <div class="commission-image-wrap">
-                    <img class="commission-image" src="artwork-9.jpeg.jpeg" alt="Commissioned artwork 9">
+                    <img class="commission-image" src="artwork-9.jpeg.jpeg" alt="Commissioned artwork 9" loading="lazy">
                 </div>
                 <div class="commission-info"><h4>Commissioned Artwork 09</h4></div>
             </article>
 
             <article class="commission-card">
                 <div class="commission-image-wrap">
-                    <img class="commission-image" src="artwork-10.jpeg.jpeg" alt="Commissioned artwork 10">
+                    <img class="commission-image" src="artwork-10.jpeg.jpeg" alt="Commissioned artwork 10" loading="lazy">
                 </div>
                 <div class="commission-info"><h4>Commissioned Artwork 10</h4></div>
             </article>
@@ -880,35 +1149,58 @@ footer p {
     </div>
 </section>
 
+<!-- JAKANUZA -->
+
 <section class="project-section" id="jakanuza">
     <div class="section-inner">
-        <img class="project-logo" src="jakanuza-logo.jpeg" alt="Jakanuza cartoon logo by Lloyd Kampira">
+
+        <img
+            class="project-logo"
+            src="jakanuza-logo.jpeg"
+            alt="Jakanuza cartoon logo by Lloyd Kampira"
+            loading="lazy">
+
         <div class="project-copy">
+
             <h2 class="section-heading">A Loy Kay Arts Project</h2>
+            <div class="section-accent"></div>
+
             <p>
                 Jakanuza is an original African cartoon series created by
                 Lloyd Kampira. Through humour, satire and storytelling,
                 it explores African culture, everyday life and the funny
                 moments that connect people.
             </p>
+
             <p><strong>Laugh. Think. Connect.</strong></p>
-            <a class="button" href="comics/episode%201.html">READ EPISODE 1</a>
+
+            <a class="button" href="comics/episode%201.html">
+                READ EPISODE 1
+            </a>
+
         </div>
     </div>
 </section>
 
-<section id="story-shelf">
+<!-- SHORT STORIES -->
+
+<section class="story-section" id="story-shelf">
     <div class="section-inner">
+
         <h2 class="section-heading">Short Stories</h2>
+        <div class="section-accent"></div>
+
         <p class="section-intro">
             Stories made of imagination, observation and the little details
             of everyday life.
         </p>
+
         <div class="story-note">
             <strong>The story shelf is being prepared.</strong><br>
             Original stories by Lloyd Kampira will appear here.
             Come back as the collection grows.
         </div>
+
     </div>
 </section>
 
@@ -918,6 +1210,8 @@ footer p {
     <div class="section-inner">
 
         <h2 class="section-heading">Meet the Creator</h2>
+        <div class="section-accent"></div>
+
         <p class="section-intro">
             The person and the story behind Loy Kay Arts.
         </p>
@@ -928,21 +1222,25 @@ footer p {
                 <img
                     class="creator-photo"
                     src="lloyd-kampira.jpeg"
-                    alt="Lloyd Kampira, founder of Loy Kay Arts">
+                    alt="Lloyd Kampira, founder of Loy Kay Arts"
+                    loading="lazy">
             </div>
 
             <div class="creator-text">
 
                 <h3 class="creator-name">Lloyd Kampira</h3>
-                <p class="creator-role">Artist · Cartoonist · Designer · Storyteller</p>
+
+                <p class="creator-role">
+                    Artist · Cartoonist · Designer · Storyteller
+                </p>
 
                 <p>
                     He is a Malawian artist whose creative journey began in
                     childhood. Like many children, he started drawing
                     alongside his peers, but his interest soon grew beyond
-                    that. During primary school at Ndirande Kachere, he would find himself
-                    drawing on the classroom blackboard for teachers
-                    during lessons.
+                    that. During primary school at Ndirande Kachere, he would
+                    find himself drawing on the classroom blackboard for
+                    teachers during lessons.
                 </p>
 
                 <p>
@@ -976,42 +1274,54 @@ footer p {
     </div>
 </section>
 
-<!-- CONTACT SECTION -->
+<!-- CONTACT -->
 
-<section id="contact">
+<section class="contact-section" id="contact">
     <div class="section-inner">
+
         <div class="panel contact-panel">
 
             <h2 class="section-heading">Get in Touch</h2>
+            <div class="section-accent"></div>
 
             <p>
                 For artwork, design enquiries and creative collaborations,
-                please connect through Loy Kay Arts' social media pages.
+                please connect through Loy Kay Arts' contact details and
+                social media pages.
             </p>
 
             <div class="contact-details">
 
                 <p>
                     <strong>Email:</strong>
-                    <a href="mailto:lloydkampira@gmail.com">lloydkampira@gmail.com</a>
+                    <a href="mailto:lloydkampira@gmail.com">
+                        lloydkampira@gmail.com
+                    </a>
                 </p>
 
                 <p>
-                    <a class="button whatsapp-button"
-                       href="https://wa.me/265885421121?text=Hello%20Loy%20Kay%20Arts%2C%20I%20would%20like%20to%20make%20an%20enquiry."
-                       target="_blank" rel="noopener noreferrer">
+                    <a
+                        class="button whatsapp-button"
+                        href="https://wa.me/265885421121?text=Hello%20Loy%20Kay%20Arts%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+                        target="_blank"
+                        rel="noopener noreferrer">
                         CHAT WITH US ON WHATSAPP
                     </a>
                 </p>
 
                 <p>
                     <strong>Phone:</strong>
-                    <a href="tel:+265993169473">+265 993 169 473</a>
+                    <a href="tel:+265993169473">
+                        +265 993 169 473
+                    </a>
                 </p>
 
                 <p>
                     <strong>Facebook:</strong>
-                    <a href="https://www.facebook.com/profile.php?id=61575496746908" target="_blank" rel="noopener noreferrer">
+                    <a
+                        href="https://www.facebook.com/profile.php?id=61575496746908"
+                        target="_blank"
+                        rel="noopener noreferrer">
                         Visit Loy Kay Arts on Facebook
                     </a>
                 </p>
@@ -1022,8 +1332,9 @@ footer p {
                 </p>
 
                 <p>
-                    <a class="button"
-                       href="mailto:lloydkampira@gmail.com?subject=LOY%20KAY%20ARTS%20Enquiry">
+                    <a
+                        class="button"
+                        href="mailto:lloydkampira@gmail.com?subject=LOY%20KAY%20ARTS%20Enquiry">
                         SEND AN ENQUIRY
                     </a>
                 </p>
@@ -1033,11 +1344,17 @@ footer p {
     </div>
 </section>
 
+</main>
+
+<!-- FOOTER -->
+
 <footer>
     <h2>LOY KAY ARTS</h2>
     <p>Art · Design · Storytelling</p>
     <p class="small-credit">Where Ideas Take Shape</p>
-    <p class="small-credit">© 2026 Loy Kay Arts · Created by Lloyd Kampira</p>
+    <p class="small-credit">
+        © 2026 Loy Kay Arts · Created by Lloyd Kampira
+    </p>
 </footer>
 
 </body>
