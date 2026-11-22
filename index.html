@@ -523,27 +523,39 @@ section {
 .art-gallery {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
     gap: 30px;
     margin-top: 32px;
 }
 
 .art-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
     overflow: hidden;
     background: var(--white);
     border: 1px solid var(--line);
     box-shadow: var(--shadow);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.art-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 38px rgba(23,23,20,.12);
 }
 
 .art-image {
     display: block;
     width: 100%;
-    height: 430px;
+    height: clamp(330px, 38vw, 460px);
     object-fit: contain;
+    object-position: center;
     background: #eae6de;
-    padding: 15px;
+    padding: 18px;
 }
 
 .art-info {
+    flex: 1;
     padding: 27px;
 }
 
@@ -624,8 +636,9 @@ section {
 
 .commission-gallery {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 26px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
     margin-top: 32px;
 }
 
@@ -644,9 +657,10 @@ section {
 .commission-image {
     display: block;
     width: 100%;
-    height: 390px;
+    height: 330px;
     object-fit: contain;
-    padding: 12px;
+    object-position: center;
+    padding: 14px;
 }
 
 .commission-image-wrap::after {
@@ -845,6 +859,12 @@ footer p {
 
 /* RESPONSIVE DISPLAY */
 
+@media (max-width: 900px) {
+    .commission-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 760px) {
     nav {
         gap: 12px 17px;
@@ -926,10 +946,11 @@ footer p {
 
     .art-image {
         height: 360px;
+        padding: 13px;
     }
 
     .commission-image {
-        height: 350px;
+        height: 320px;
     }
 
     .commission-note {
@@ -958,6 +979,11 @@ footer p {
     *::before,
     *::after {
         transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .art-card:hover {
+        transform: none;
     }
 }
 </style>
