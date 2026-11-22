@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -195,6 +194,48 @@ nav a:hover {
     color: #514d46;
     line-height: 1.9;
     font-size: 16px;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 28px auto 0;
+}
+
+.hero-button {
+    display: inline-block;
+    min-width: 175px;
+    padding: 13px 21px;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--white);
+    text-decoration: none;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.hero-button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.hero-button.secondary {
+    background: transparent;
+    color: var(--ink);
+}
+
+.hero-button.secondary:hover {
+    background: var(--green);
+    border-color: var(--green);
+    color: var(--white);
 }
 
 .african-rule {
@@ -844,6 +885,15 @@ footer p {
         font-size: 14px;
     }
 
+    .hero-actions {
+        gap: 10px;
+    }
+
+    .hero-button {
+        min-width: 155px;
+        padding: 12px 15px;
+    }
+
     .hero::before,
     .hero::after {
         width: 95px;
@@ -934,7 +984,7 @@ footer p {
         src="loy-kay-arts-logo.jpeg"
         alt="Loy Kay Arts logo">
 
-    <p class="hero-kicker">AN INDEPENDENT CREATIVE BRAND</p>
+    <p class="hero-kicker">AN INDEPENDENT MALAWIAN CREATIVE BRAND</p>
 
     <h1>Where Ideas Take Shape</h1>
 
@@ -942,6 +992,11 @@ footer p {
         A creative home for visual art, design, cartoons and storytelling.
         Explore the work and ideas of Lloyd Kampira.
     </p>
+
+    <div class="hero-actions">
+        <a class="hero-button" href="#available-art">EXPLORE THE ARTWORK</a>
+        <a class="hero-button secondary" href="#contact">GET IN TOUCH</a>
+    </div>
 
     <div class="african-rule" aria-hidden="true">
         <span></span><span></span><span></span>
