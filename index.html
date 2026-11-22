@@ -461,23 +461,49 @@ section {
     border-bottom: 1px solid var(--line);
 }
 
+.project-feature {
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    align-items: center;
+    gap: 55px;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
 .project-logo {
     display: block;
-    width: min(460px, 92%);
+    width: min(100%, 430px);
     height: auto;
-    margin: 0 auto 30px;
+    margin: 0 auto;
     background: var(--white);
+    border: 8px solid var(--white);
+    box-shadow: var(--shadow);
 }
 
 .project-copy {
     max-width: 730px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     line-height: 1.9;
+}
+
+.project-copy .section-heading {
+    display: table;
+    margin: 0 0 14px;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.project-copy .section-accent {
+    margin: 18px 0 25px;
 }
 
 .project-copy p {
     color: #4e4a43;
+}
+
+.project-copy .button {
+    margin-top: 10px;
 }
 
 /* VISUAL ARTS */
@@ -877,6 +903,26 @@ footer p {
 
     section {
         padding: 58px 17px;
+    }
+
+    .project-feature {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        max-width: 620px;
+    }
+
+    .project-copy {
+        text-align: center;
+    }
+
+    .project-copy .section-heading {
+        display: table;
+        margin: 0 auto 14px;
+        text-align: center;
+    }
+
+    .project-copy .section-accent {
+        margin: 18px auto 25px;
     }
 
     .creator-layout {
@@ -1387,30 +1433,33 @@ footer p {
 <section class="project-section" id="jakanuza">
     <div class="section-inner">
 
-        <img
-            class="project-logo"
-            src="jakanuza-logo.jpeg"
-            alt="Jakanuza cartoon logo by Lloyd Kampira"
-            loading="lazy">
+        <div class="project-feature">
 
-        <div class="project-copy">
+            <img
+                class="project-logo"
+                src="jakanuza-logo.jpeg"
+                alt="Jakanuza cartoon logo by Lloyd Kampira"
+                loading="lazy">
 
-            <h2 class="section-heading">A Loy Kay Arts Project</h2>
-            <div class="section-accent"></div>
+            <div class="project-copy">
 
-            <p>
-                Jakanuza is an original African cartoon series created by
-                Lloyd Kampira. Through humour, satire and storytelling,
-                it explores African culture, everyday life and the funny
-                moments that connect people.
-            </p>
+                <h2 class="section-heading">A Loy Kay Arts Project</h2>
+                <div class="section-accent"></div>
 
-            <p><strong>Laugh. Think. Connect.</strong></p>
+                <p>
+                    Jakanuza is an original African cartoon series created by
+                    Lloyd Kampira. Through humour, satire and storytelling,
+                    it explores African culture, everyday life and the funny
+                    moments that connect people.
+                </p>
 
-            <a class="button" href="comics/episode%201.html">
-                READ EPISODE 1
-            </a>
+                <p><strong>Laugh. Think. Connect.</strong></p>
 
+                <a class="button" href="comics/episode%201.html">
+                    READ EPISODE 1
+                </a>
+
+            </div>
         </div>
     </div>
 </section>
