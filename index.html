@@ -717,14 +717,21 @@ section {
 /* SHORT STORIES */
 
 .story-section {
+    position: relative;
+    overflow: hidden;
     background: var(--white);
     border-top: 1px solid var(--line);
 }
 
 .story-note {
-    max-width: 780px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    align-items: center;
+    gap: 28px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 38px 42px;
     background-color: #f1ece2;
     background-image:
         repeating-linear-gradient(
@@ -734,8 +741,72 @@ section {
         );
     border-left: 6px solid var(--accent);
     border-right: 6px solid var(--green);
-    text-align: center;
+    box-shadow: var(--shadow);
     line-height: 1.9;
+}
+
+.story-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 104px;
+    height: 104px;
+    border: 1px solid rgba(164,95,61,.35);
+    border-radius: 50%;
+    background: rgba(255,254,250,.72);
+    color: var(--accent-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 76px;
+    line-height: 1;
+}
+
+.story-note-content {
+    min-width: 0;
+}
+
+.story-label {
+    display: inline-block;
+    margin: 0 0 9px;
+    color: var(--green);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.story-note strong {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 1.35;
+}
+
+.story-note p {
+    margin: 0;
+    color: var(--muted);
+}
+
+@media (max-width: 600px) {
+    .story-note {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 28px 22px;
+        text-align: center;
+    }
+
+    .story-symbol {
+        width: 78px;
+        height: 78px;
+        margin: 0 auto;
+        font-size: 58px;
+    }
+
+    .story-note strong {
+        font-size: 22px;
+    }
 }
 
 /* MEET THE CREATOR */
@@ -1478,9 +1549,20 @@ footer p {
         </p>
 
         <div class="story-note">
-            <strong>The story shelf is being prepared.</strong><br>
-            Original stories by Lloyd Kampira will appear here.
-            Come back as the collection grows.
+
+            <div class="story-symbol" aria-hidden="true">“</div>
+
+            <div class="story-note-content">
+                <span class="story-label">WRITING &amp; STORYTELLING</span>
+
+                <strong>The story shelf is being prepared.</strong>
+
+                <p>
+                    Original stories by Lloyd Kampira will appear here.
+                    Come back as the collection grows.
+                </p>
+            </div>
+
         </div>
 
     </div>
