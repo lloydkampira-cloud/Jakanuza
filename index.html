@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -724,18 +723,15 @@ section {
     border-top: 1px solid var(--line);
 }
 
-.stories-grid {
+.story-note {
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-    margin-top: 35px;
-}
-
-.story-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 30px 25px;
+    grid-template-columns: 112px 1fr;
+    align-items: center;
+    gap: 28px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 38px 42px;
     background-color: #f1ece2;
     background-image:
         repeating-linear-gradient(
@@ -743,46 +739,123 @@ section {
             transparent 0 20px,
             rgba(164,95,61,.035) 20px 22px
         );
-    border-top: 5px solid var(--accent);
-    border-bottom: 5px solid var(--green);
+    border-left: 6px solid var(--accent);
+    border-right: 6px solid var(--green);
     box-shadow: var(--shadow);
-    transition: transform .2s ease, box-shadow .2s ease;
+    line-height: 1.9;
 }
 
-.story-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 35px rgba(23,23,20,.12);
+.story-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 104px;
+    height: 104px;
+    border: 1px solid rgba(164,95,61,.35);
+    border-radius: 50%;
+    background: rgba(255,254,250,.72);
+    color: var(--accent-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 76px;
+    line-height: 1;
+}
+
+.story-note-content {
+    min-width: 0;
 }
 
 .story-label {
     display: inline-block;
-    margin-bottom: 17px;
+    margin: 0 0 9px;
     color: var(--green);
     font-size: 10px;
     font-weight: bold;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.story-card h3 {
-    margin: 0 0 14px;
+.story-note strong {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--ink);
     font-family: Georgia, "Times New Roman", serif;
     font-size: 25px;
+    font-weight: normal;
     line-height: 1.35;
 }
 
-.story-card p {
-    flex: 1;
-    margin: 0 0 24px;
+.story-note p {
+    margin: 0;
     color: var(--muted);
-    line-height: 1.85;
 }
 
-.stories-credit {
-    margin: 35px 0 0;
-    color: var(--muted);
-    text-align: center;
+@media (max-width: 600px) {
+    .story-note {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 28px 22px;
+        text-align: center;
+    }
+
+    .story-symbol {
+        width: 78px;
+        height: 78px;
+        margin: 0 auto;
+        font-size: 58px;
+    }
+
+    .story-note strong {
+        font-size: 22px;
+    }
+}
+
+
+/* SHORT STORY CARDS */
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 35px;
+}
+.story-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 29px 25px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--green);
+    border-bottom: 4px solid var(--accent);
+    box-shadow: 0 7px 22px rgba(23,23,20,.06);
+}
+.story-card h3 {
+    margin: 5px 0 13px;
     font-family: Georgia, "Times New Roman", serif;
-    font-style: italic;
+    font-size: 23px;
+    line-height: 1.3;
+}
+.story-card p {
+    flex: 1;
+    margin: 0 0 22px;
+    color: var(--muted);
+    line-height: 1.8;
+    text-align: justify;
+}
+.story-card .story-label {
+    margin-bottom: 7px;
+}
+.story-card .button {
+    margin-top: auto;
+}
+@media (max-width: 900px) {
+    .stories-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 600px) {
+    .stories-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* MEET THE CREATOR */
@@ -839,6 +912,7 @@ section {
 .creator-text p {
     margin: 0 0 17px;
     color: #444039;
+    text-align: justify;
 }
 
 /* CONTACT */
@@ -936,10 +1010,6 @@ footer p {
     .commission-gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
-    .stories-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 }
 
 @media (max-width: 760px) {
@@ -1024,8 +1094,7 @@ footer p {
 
     .work-grid,
     .art-gallery,
-    .commission-gallery,
-    .stories-grid {
+    .commission-gallery {
         grid-template-columns: 1fr;
     }
 
@@ -1059,14 +1128,6 @@ footer p {
         padding: 22px;
     }
 
-    .story-card {
-        padding: 27px 23px;
-    }
-
-    .story-card h3 {
-        font-size: 23px;
-    }
-
     .creator-name {
         font-size: 29px;
     }
@@ -1088,8 +1149,7 @@ footer p {
         scroll-behavior: auto !important;
     }
 
-    .art-card:hover,
-    .story-card:hover {
+    .art-card:hover {
         transform: none;
     }
 }
@@ -1201,7 +1261,7 @@ footer p {
 
             <article class="work-card">
                 <div class="card-mark">J</div>
-                <h3>Cartoons &amp; Comics</h3>
+                <h3>Cartoons & Comics</h3>
                 <p>
                     Original characters, illustrations, African humour
                     and stories told through cartoons.
@@ -1534,78 +1594,53 @@ footer p {
         <div class="section-accent"></div>
 
         <p class="section-intro">
-            Stories made of imagination, observation and the little details
-            of everyday life. Original short stories by Lloyd Kampira.
+            Some stories make you laugh. Others make you think. A few do both.
+            Life has a way of producing characters, situations and conversations
+            that are sometimes funny, sometimes difficult, and often unforgettable.
+            Here, ordinary people find themselves in unexpected situations.
+            Through humour, observation and imagination, these stories bring
+            everyday experiences to life. Original stories by Lloyd Kampira.
         </p>
 
         <div class="stories-grid">
 
             <article class="story-card">
-
-                <span class="story-label">
-                    STORY 01 · HUMOUR &amp; LIFE
-                </span>
-
-                <h3>The Day Mr. Matandani Smiled</h3>
-
+                <span class="story-label">STORY 01 · HUMOUR &amp; LIFE</span>
+                <h3>The Silence of Mr. Matandani</h3>
                 <p>
-                    In Bangwe, Mr. Matandani was known for many things,
-                    but smiling was not one of them. Then one afternoon,
-                    his grandchildren did something that changed everything.
+                    Some people are known for their laughter. Others are remembered
+                    for their silence. In Bangwe, Mr. Matandani had built quite a
+                    reputation for being a man who rarely showed emotion. But even
+                    the most serious people have their moments.
                 </p>
-
-                <a class="button"
-                   href="the-day-mr-matandani-smiled.html">
-                    READ STORY
-                </a>
-
+                <a class="button" href="the-silence-of-mr-matandani.html">READ STORY</a>
             </article>
 
             <article class="story-card">
-
-                <span class="story-label">
-                    STORY 02 · EVERYDAY LIFE
-                </span>
-
-                <h3>Nyalugwe of Limbe</h3>
-
+                <span class="story-label">STORY 02 · EVERYDAY LIFE</span>
+                <h3>The Raleigh Affair</h3>
                 <p>
-                    A skilled bricklayer with a special love for his
-                    Raleigh bicycle. One ordinary morning in Limbe
-                    turns into an unforgettable experience.
+                    In Limbe, everyone has a story to tell, and sometimes an ordinary
+                    day can become a memorable one. For Nyalugwe, life was simple,
+                    work was work, and some things were worth more than money.
                 </p>
-
-                <a class="button"
-                   href="nyalugwe-of-limbe.html">
-                    READ STORY
-                </a>
-
+                <a class="button" href="the-raleigh-affair.html">READ STORY</a>
             </article>
 
             <article class="story-card">
-
-                <span class="story-label">
-                    STORY 03 · REAL-LIFE DRAMA
-                </span>
-
-                <h3>Ajijo’s Very Bad Weekend</h3>
-
+                <span class="story-label">STORY 03 · REAL-LIFE DRAMA</span>
+                <h3>A Debt Called Monday</h3>
                 <p>
-                    Ajijo sets out to make money and bring something
-                    home to his family. But the weekend has other
-                    plans for him.
+                    Life can be unpredictable, especially when responsibilities are
+                    waiting and opportunities are hard to find. Ajijo had his own
+                    plans, but sometimes life follows a different script.
                 </p>
-
-                <a class="button"
-                   href="ajijos-very-bad-weekend.html">
-                    READ STORY
-                </a>
-
+                <a class="button" href="a-debt-called-monday.html">READ STORY</a>
             </article>
 
         </div>
 
-        <p class="stories-credit">
+        <p class="stories-credit" style="text-align:center; margin-top:28px; color:var(--muted);">
             More stories will be added as the collection grows.
         </p>
 
